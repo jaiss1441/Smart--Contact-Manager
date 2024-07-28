@@ -53,7 +53,22 @@ Go on official website
 				<div th:replace="fragments/alert :: alert (type='danger', message=${errorMessage})">...</div>
 
 <!-- Advantage of thymeleaf concept -->
-	it will help you reduce multiple code/link inserting in our page via fragmentation in which we have to create diffrent file for that in that you have create multiple fragment then insert/replace that link/code into requred places  same like abouv example create diffrent tag put your requred info/link/code and then use it 
+	-it will help you reduce multiple code/link inserting in our page via fragmentation in which we have to create diffrent file for that in that you have create multiple fragment then insert/replace that link/code into requred places  same like abouv example create diffrent tag put your requred info/link/code and then use it 
 
+	-Dynamic Data/ hole html section you can send to the fragment page as parameter in this way you make your comtent dynamic 
+
+	Example:
+	-UseCase suppose in application user trying login and if itis passing valid credential then it see content regarding that user or if user passing wrong credential it will see different content
+
+	-In this request user try to login 
+		 @RequestMapping("/home")
+    public String home(Model model){
+        model.addAttribute("isLogin",true);
+        System.out.println("Home page Handler");
+        return "home";
+    } 
+	if user login with right credential it will show parent fragment else it will show base fragment
+	
+	<div class="host-tag"  th:replace="${isLogin} ? ~{fragment :: parent('one')} ~~{fragment :: base('service one')}"></div>
 <!-- Errors Face and Solution -->
 remote origin already exists. ---(Solution- git remote set-url origin "Put project link here ")

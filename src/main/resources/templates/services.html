@@ -7,6 +7,7 @@
     </head>
     <body>
         <h1>This is services page</h1>
-        <div th:insert="~{fragment :: parent}"></div>
+        <div th:insert="~{fragment :: parent('service one', 'service two')}"></div>
+        <div class="host-tag"  th:replace="${isLogin} ? ~{fragment :: parent('one')} ~~{fragment :: base('service one')}"></div>
     </body>
 </html>
