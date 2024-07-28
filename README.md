@@ -30,7 +30,30 @@ Go on official website
 
 
 			
-			
+<!-- Thymeleaf Fragment Feature Useage -->
+
+			It will help you use one componant in various html pages 
+				its kind of function thing where you have you to create a separate html page where have create a tag in which put all infomation which you want on every html page and then add that tag into that perticula page via insert or replace option 
+
+				Example :
+				<!-- create saperate html page -->
+
+					<div
+					th:fragment="parent"
+					><h1>Parent fragment</h1>
+					<p>THis is fragment for testing</p>
+					</div>
+
+
+
+				 <!-- via insert  -->
+				 <div th:insert="~{fragment :: parent}"></div>
+
+				 <!-- via replace -->
+				<div th:replace="fragments/alert :: alert (type='danger', message=${errorMessage})">...</div>
+
+<!-- Advantage of thymeleaf concept -->
+	it will help you reduce multiple code/link inserting in our page via fragmentation in which we have to create diffrent file for that in that you have create multiple fragment then insert/replace that link/code into requred places  same like abouv example create diffrent tag put your requred info/link/code and then use it 
 
 <!-- Errors Face and Solution -->
 remote origin already exists. ---(Solution- git remote set-url origin "Put project link here ")
