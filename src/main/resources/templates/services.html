@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UFT-8">
-        <meta name="viewpoint" content="width=device=width", initial-scale="1.0">
-        <title>Services page</title>
-    </head>
-    <body>
-        <h1>This is services page</h1>
-        <div th:insert="~{fragment :: parent('service one', 'service two')}"></div>
-        <div class="host-tag"  th:replace="${isLogin} ? ~{fragment :: parent('one')} ~~{fragment :: base('service one')}"></div>
-    </body>
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+<head>
+   <title>Services</title>
+</head>
+<body>
+    <section id="content">
+        <h1>Welcome to services page</h1>
+    </section>
+
+    <script>
+        console.log("services script")
+    </script>
+</body>
 </html>

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UFT-8">
-        <meta name="viewpoint" content="width=device=width", initial-scale="1.0">
-        <title>About page</title>
-    </head>
-    <body>
-        <h1>This is about page</h1>
-        <div th:insert="~{fragment :: parent(' one','two')}"></div>
-    </body>
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+<head>
+   <title >About Page</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to about page</h1>
+    </div>
+
+    <script>
+        console.log("About script")
+    </script>
+</body>
 </html>
