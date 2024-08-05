@@ -70,5 +70,5 @@ Go on official website
 	if user login with right credential it will show parent fragment else it will show base fragment
 	
 	<div class="host-tag"  th:replace="${isLogin} ? ~{fragment :: parent('one')} ~~{fragment :: base('service one')}"></div>
-<!-- *)Errors Face and Solution -->
+<!-- Errors Face and Solution -->
 remote origin already exists. ---(Solution- git remote set-url origin "Put project link here ")
