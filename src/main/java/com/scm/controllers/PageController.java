@@ -23,4 +23,20 @@ public class PageController {
     public String servicesPageLoading(){
         return "services";
     }
+
+    @RequestMapping("/contact")
+    public String contact(){
+
+        return "contact";
+    }
+
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
 }
