@@ -1,8 +1,13 @@
 package com.scm.entities;
 
+import java.util.*;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -39,5 +44,11 @@ public class User {
     // SELF, GOOGLE,FACEBOOK,TWITTER/X,LINKEDIN,GITHUB
     private Providers provider = Providers.SELF;
     private String providerUserId;
-}
+
 ///https://www.scaler.com/event/fundamentals-of-docker---kubernetes-007/
+
+//add more fields if needed
+@OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
+    private List<Contact> contacts = new ArrayList<>();
+}
+
