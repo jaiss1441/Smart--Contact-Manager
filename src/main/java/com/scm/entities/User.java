@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity(name = "user")
 @Table(name = "users")
@@ -22,6 +23,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@ToString
 public class User {
 
     @Id
@@ -50,5 +52,7 @@ public class User {
 //add more fields if needed
 @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.LAZY,orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
+
+    
 }
 
