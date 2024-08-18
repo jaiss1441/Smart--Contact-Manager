@@ -15,18 +15,18 @@ xmlns:th="http://www.thymeleaf.org">
      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="dark:bg-gray-900 dark:text-white" >
+<body class="dark:bg-gray-900 bg-gray-100 dark:text-white" >
  
     <!-- Common Header -->
      <div th:replace="navbar::navbar"></div>
-    Base page content
+   
     <div class="p-4">
         <section th:replace="${content}"></section>
     </div>
     
 
     <!-- Common footer -->
-     <footer class="p-4">Common Footer </footer>
+     <!-- <footer class="p-4">Common Footer </footer> -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script data-th-src="@{'/js/script.js'}"></script>
     <th:block th:replace="${script}"></th:block>
