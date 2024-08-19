@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:replace="${title}">SCM</title>
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link rel="stylesheet" th:href="@{'/css/output.css'}" />
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css"
       rel="stylesheet"
@@ -25,7 +25,7 @@
   </head>
   <body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
     <!-- Common Header -->
-    <div th:replace="navbar::navbar"></div>
+    <div th:replace="~{navbar::navbar}"></div>
 
     <div class="p-4">
       <section th:replace="${content}"></section>
@@ -34,7 +34,7 @@
     <!-- Common footer -->
     <!-- <footer class="p-4">Common Footer </footer> -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-    <script data-th-src="@{'/js/script.js'}"></script>
+    <script th:src="@{'/js/script.js'}"></script>
     <th:block th:replace="${script}"></th:block>
   </body>
 </html>

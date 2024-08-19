@@ -1,12 +1,15 @@
 package com.scm.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scm.forms.UserForm;
 
-import org.springframework.ui.Model;
+
+
+
 
 @Controller
 public class PageController {
@@ -44,14 +47,18 @@ public class PageController {
     @RequestMapping("/register")
     public String register(Model model) {
         UserForm userForm = new UserForm();
-        model.addAttribute("userForm", userForm);
+        // Sending default data to form from backend
+        // userForm.setName("@999_Jais");
+        // userForm.setAbout("Write something about yourself");
+        model.addAttribute("userForm",userForm);
         return "register";
     }
 
     // Processing Register
     @RequestMapping(value = "/do-register", method = RequestMethod.POST)
-    public String processingRegister() {
+    public String processingRegister(UserForm userForm) {
         // creating model to store data into it - UserForm
+        System.out.println(userForm);
 
         // fetch form data
         // validate form data
