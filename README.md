@@ -71,4 +71,10 @@ Go on official website
 	
 	<div class="host-tag"  th:replace="${isLogin} ? ~{fragment :: parent('one')} ~~{fragment :: base('service one')}"></div>
 <!-- Errors Face and Solution -->
-remote origin already exists. ---(Solution- git remote set-url origin "Put project link here ")
+1) remote origin already exists. ---(Solution- git remote set-url origin "Put project link here ")
+
+2) (Problem-The method addAttribute(String, UserForm) is undefined for the type Model, ----> Solution- import org.springframework.ui.Model;)
+
+
+
+
