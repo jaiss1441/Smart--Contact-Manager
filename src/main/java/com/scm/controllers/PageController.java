@@ -1,5 +1,6 @@
 package com.scm.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.scm.entities.User;
 import com.scm.forms.UserForm;
+import com.scm.services.UserService;
 
 
 
@@ -15,6 +18,9 @@ import com.scm.forms.UserForm;
 
 @Controller
 public class PageController {
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/home")
     public String home() {
@@ -65,8 +71,21 @@ public class PageController {
         // fetch form data
         // validate form data
         // save to database
+        // user service userForm ----> user
+        User user = User.builder()
+        .name(userForm.getName())
+        .about(userForm.getAbout())
+        .email(userForm.getEmail())
+        .password(userForm.getPassword())
+        .phoneNumber(userForm.getPhoneNumber())
+        .profilePic("https://avatarfiles.alphacoders.com/375/375167.png")
+        .build();
+
+        User savedUser =userService.saveUser(user);
+
+        System.out.println("User Saved");
         // message "Successful Registration"
         // redirect login page
-        return "redirect/register";
+        return "redirect:/register";
     }
 }
