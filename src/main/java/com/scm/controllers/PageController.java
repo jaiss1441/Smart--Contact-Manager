@@ -88,4 +88,9 @@ public class PageController {
         // redirect login page
         return "redirect:/register";
     }
+
+    public String  massageHandling(){
+        return "";
+
+    }
 }
