@@ -6,6 +6,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
@@ -44,7 +45,7 @@ public class User {
     private boolean enabled=false;
     private boolean emailVerified =false;
     private boolean phoneVerified=false;
-    @Enumerated
+    @Enumerated(value = EnumType.STRING)
     // SELF, GOOGLE,FACEBOOK,TWITTER/X,LINKEDIN,GITHUB
     private Providers provider = Providers.SELF;
     private String providerUserId;
